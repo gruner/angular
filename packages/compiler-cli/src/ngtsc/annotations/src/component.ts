@@ -832,6 +832,11 @@ export class ComponentDecoratorHandler implements
       leadingTriviaChars: [],
     });
 
+    let template = templateStr;
+    if (templateRange !== undefined) {
+      template = templateStr.substring(templateRange.startPos, templateRange.endPos);
+    }
+
     return {
       interpolation,
       emitNodes,
@@ -840,7 +845,7 @@ export class ComponentDecoratorHandler implements
       styles,
       ngContentSelectors,
       errors,
-      template: templateStr,
+      template,
       templateUrl,
       isInline: component.has('template'),
       file: new ParseSourceFile(templateStr, templateUrl),
