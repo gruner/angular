@@ -129,7 +129,7 @@ interface JQuery {
 }
 ```
 
-If don't add the interface for the script-defined extension, your IDE shows an error:
+If you don't add the interface for the script-defined extension, your IDE shows an error:
 
 ```
 [TS][Error] Property 'myPlugin' does not exist on type 'JQuery'
